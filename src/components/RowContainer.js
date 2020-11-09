@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 function RowContainer({ rowData }) {
     return (
@@ -9,5 +10,12 @@ function RowContainer({ rowData }) {
         </div>
     )
 }
+
+const Container = styled.div`
+    border: 2px solid;
+    & p {
+        flex: 1 1 0px;
+      }
+`
 
 export default RowContainer

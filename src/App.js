@@ -1,11 +1,17 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+
 import MainLayout from './layouts/MainLayout'
+import Routes from './Routes'
 
 function App() {
   return (
-    <MainLayout>
-      <div>Main component will show here when we implement routing</div>
-    </MainLayout>
+    <BrowserRouter>
+      <MainLayout>
+        <Routes />
+      </MainLayout>
+    </BrowserRouter>
+
   );
 }
 

@@ -1,13 +1,21 @@
 import React from 'react'
 import RowContainer from '../components/RowContainer'
+import { alertsData } from '../dataSource'
 
 function Alerts() {
-    return(
-    <div>
-        <RowContainer />
-    </div>
-    
+    return (
+      <>
+        {alertsData.map((alert) => (
+          <SmallPadding key={alert.name}>
+            <RowContainer rowData={alert} />
+          </SmallPadding>
+        ))}
+      </>
     )
-}
+  }
+  
+  const SmallPadding = styled.div`
+    padding-bottom: 24px;
+  `
 
 export default Alerts
