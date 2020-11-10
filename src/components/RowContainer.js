@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import EditBox from './EditBox'
 
-function RowContainer({ rowData }) {
-    return (
-        <div>
+function RowContainer({ rowData, type }) {
+    const [showEditBox, setShowEditBox] = useState(false)
+        return ( 
+        <Container>
+            <button onClick={() => useState(false)} >Edit</button>
             <p>Name:{rowData.name} </p>
             <p>Date: {rowData.date} </p>
             <p>Description: {rowData.description} </p>
-        </div>
+        </Container>
+        {showEditBox && (
+            <EditBox 
+                name={rowData.name}
+                date={rowData.date}
+                description={rowData.description}
+                type={type}
+                onClose={() => setShowEditBox(false)}
+            
+            />
+        )}
     )
 }
 

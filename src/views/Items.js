@@ -1,10 +1,20 @@
-import React, {useContext } from 'react'
+import React, {useContext, useEffect, useState } from 'react'
 import ItemList from '../components/ItemList'
 import { ModalContext} from '../layouts/MainLayout'
-import { alertsData } from '../dataSource'
+import { getData } from './Users'
+
 
 function Items() {
     const modalFunctions = useContext(ModalContext)
+    const [itemsData, setItemsData] = useState([])
+
+    useEffect(() => {
+      async function fetchData() {
+        const res = await getData("https://fakerapi.it/api/v1/custom?_query=7&amount=counter&name=pokemon&date=date&location=word&description=text")
+        setItemsData(res.date)
+      }
+      fetchData()
+    }, [])
 
     const columns = [
         { title: "Item", field: "name" },
@@ -36,6 +46,7 @@ function Items() {
 return (
     <ListContainer>
       <ItemList
+
         columns={columns}
         data={itemsData}
         title="Main List"
