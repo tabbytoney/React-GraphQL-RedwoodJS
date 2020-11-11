@@ -37,14 +37,12 @@ const Flex = styled.div`
   font-size: 18px;
   justify-content: center;
   width: 100%;
-
   & a {
     color: #a39bb0;
     font-weight: bold;
     padding: 12px;
     text-decoration: unset;
   }
-  
   & a:hover {
     color: rgba(43, 72, 106, 0.75);
   }

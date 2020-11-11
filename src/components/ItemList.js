@@ -1,25 +1,23 @@
-import React from 'react'
-import MaterialTable from 'material-table'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
+import MaterialTable from "material-table"
 
 function ItemList({ columns, data, title, showDetails }) {
-    return (
-        <FullWidth>
-        <MaterialTable
-            columns={columns}
-            data={data}
-            title={title}
-            actions={
-                [
-                    {
-                        icon: () => <ViewIcon />,
-                        toolTip: "ViewDetails",
-                        onClick: (_event, rowData) => showDetails(rowData)
-                    }
-                ]
-            } />
-        </FullWidth>
-    )
+  return (
+    <FullWidth>
+      <MaterialTable
+        columns={columns}
+        data={data}
+        title={title}
+        actions={[
+          {
+            icon: () => <ViewIcon />,
+            tooltip: "View Details",
+            onClick: (_event, rowData) => showDetails(rowData)}
+        ]}
+      />
+    </FullWidth>
+  )
 }
 
 const FullWidth = styled.div`

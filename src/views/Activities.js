@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 
+import { getData } from "./Users"
 import RowContainer from "../components/RowContainer"
-import { getData } from './Users'
-
 
 function Activities() {
-  const [activitiessData, setActivitiesData] = useState([])
+  const [activitiesData, setActivitiesData] = useState([])
 
   useEffect(() => {
     async function fetchData() {
-      const res = getData("https://fakerapi.it/api/v1/custom?_quantity=13&name=word&date=date&description=text")
-      setAlertsData(res.data)
+      const res = await getData("https://fakerapi.it/api/v1/custom?_quantity=31&name=word&date=date&description=text")
+      setActivitiesData(res.data)
     }
     fetchData()
   }, [])
+
   return (
     <>
       {activitiesData.map((activity) => (
