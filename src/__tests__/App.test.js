@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom'
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("App", () => {
+  test('renders App component', async () => {
+    render(<App />);
+//screen literally means look what's on this screen. This checks for the text of the nav header
+
+    expect(screen.queryByText(/Taking Inventory/)).toBeInTheDocument() //equivalent of Cypress 'should have'
+
+    }
+  )}
+  )
