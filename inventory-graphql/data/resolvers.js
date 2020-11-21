@@ -89,9 +89,5 @@ export const resolvers = {
 
             return new Activity(id, input)
         }
-
-
-
-            return new Activity(id, input)
-        }
     }
+}
